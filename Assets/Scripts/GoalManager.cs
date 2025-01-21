@@ -27,11 +27,11 @@ public class GoalManager : MonoBehaviour
 
     private void Ball_onGoalScored(object sender, Ball.onGoalScoredEventArgs e)
     {
-        if (e.collider.gameObject.name == LEFT_GOAL)
+        if (e.collider.gameObject.name == RIGHT_GOAL)
         {
             AddPointPlayer1();
         }
-        else if (e.collider.gameObject.name == RIGHT_GOAL)
+        else if (e.collider.gameObject.name == LEFT_GOAL)
         {
             AddPointPlayer2();
         }

@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     public static Ball Instance { get; private set; }
 
     public event EventHandler<onGoalScoredEventArgs> onGoalScored;
+    public event EventHandler onSolidHit;
     public class onGoalScoredEventArgs : EventArgs
     {
         public Collider2D collider;
@@ -50,10 +51,12 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        onSolidHit?.Invoke(this,EventArgs.Empty);
+
         GameObject gameObject = collision.gameObject;
+
         if (gameObject.GetComponent<Player>())
         {
-            Debug.Log(collision.gameObject);
             Vector2 contactPoint = collision.GetContact(0).point;
             Vector2 playerPosition = gameObject.transform.position;
             float offset = contactPoint.y - playerPosition.y;
@@ -70,7 +73,6 @@ public class Ball : MonoBehaviour
 
     public void ResetPosition()
     {
-        ReverseDirection();
         ball.gameObject.transform.position = new Vector3(0, 0, 0);
         ResetBall();
     }
@@ -82,7 +84,6 @@ public class Ball : MonoBehaviour
     }
     private void ResetBall()
     {
-        direction = new Vector2(1f, 1f);
         rigidbody2D.velocity = direction.normalized * forceModifier;
     }
 }

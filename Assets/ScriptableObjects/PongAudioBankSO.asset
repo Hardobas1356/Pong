@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb7961bc8e48164b9d3117e58af2b7e, type: 3}
+  m_Name: PongAudioBankSO
+  m_EditorClassIdentifier: 
+  pongAudioClips:
+  - {fileID: 8300000, guid: a3fdfa3a5e99fd244aef94147523951c, type: 3}
+  - {fileID: 8300000, guid: bd836d7bef6127f4fb4b5daf62fbe5ff, type: 3}
+  - {fileID: 8300000, guid: 50dc43d68ec49fc40a0ffe6524cf79f1, type: 3}
